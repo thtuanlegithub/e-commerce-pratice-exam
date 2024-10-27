@@ -1,3 +1,4 @@
+import "antd/dist/reset.css";
 import { useDispatch } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import "./App.css";

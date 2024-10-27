@@ -30,11 +30,11 @@ function MainLayout() {
   }, [location.pathname, sidebarGroupTemplate]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col flex-1">
       <NavBar />
-      <div className="flex flex-row">
+      <div className="flex flex-row flex-1">
         <Sidebar focusedTitles={focusedTitles} groups={LAYOUT_SIDEBAR_ADMIN} />
-        <div className="flex-1">
+        <div className="flex-1 shadow-md pl-4 pt-4">
           <Outlet />
         </div>
       </div>
