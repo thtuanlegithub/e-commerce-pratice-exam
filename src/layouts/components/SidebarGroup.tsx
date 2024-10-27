@@ -26,30 +26,32 @@ function SidebarGroup({ group, isFocused }: SideBarGroupProps) {
   }, [group.title]);
 
   return (
-    <Link
-      target="_self"
-      to={handleNavigation.to}
-      title={group.title}
-      className={twMerge(
-        "flex flex-col px-4 py-4 cursor-pointer hover:bg-blue-50 hover:rounded-xl hover:px-4",
-        isFocused && "bg-blue-100"
-      )}
-    >
-      <div className="flex items-center gap-4">
-        {group.icon}
-        <span>{group.title}</span>
-      </div>
-      {isFocused && (
-        <div>
-          {group.items?.map((item, index) => (
-            <div key={index} className="flex items-center">
-              {item.icon}
-              <span>{item.title}</span>
-            </div>
-          ))}
+    <div className="px-2">
+      <Link
+        target="_self"
+        to={handleNavigation.to}
+        title={group.title}
+        className={twMerge(
+          "flex flex-col px-4 py-4 cursor-pointer hover:bg-blue-50 hover:rounded-xl hover:px-4",
+          isFocused && "bg-blue-100 rounded-xl px-4"
+        )}
+      >
+        <div className="flex items-center gap-4">
+          {group.icon}
+          <span>{group.title}</span>
         </div>
-      )}
-    </Link>
+        {isFocused && (
+          <div>
+            {group.items?.map((item, index) => (
+              <div key={index} className="flex items-center">
+                {item.icon}
+                <span>{item.title}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </Link>
+    </div>
   );
 }
 

@@ -15,7 +15,9 @@ function MainLayout() {
 
   useEffect(() => {
     const path = location.pathname;
-    const pathArray = path.split("/").filter((item) => item !== "");
+    const pathArray = path
+      .split("/")
+      .filter((item) => item !== "" && item !== "main");
     if (pathArray.length === 0) {
       setFocusedTitles([undefined, undefined]);
       return;
