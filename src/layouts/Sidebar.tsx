@@ -12,7 +12,7 @@ type SideBarProps = {
 function Sidebar({ className, groups, focusedTitles }: SideBarProps) {
   const location = useLocation();
   return (
-    <aside className={twMerge("h-full w-64", className)}>
+    <aside className={twMerge("h-full w-64 shadow-md", className)}>
       {groups.map((group, index) => (
         <div key={index}>
           <SidebarGroup

@@ -1,11 +1,11 @@
 import MainPageTitle from "../../components/MainPageTitle";
 
-function DashboardPage() {
+function CustomerPage() {
   return (
     <div>
-      <MainPageTitle title="Dashboard" />
+      <MainPageTitle title="Customer" />
     </div>
   );
 }
 
-export default DashboardPage;
+export default CustomerPage;

@@ -4,7 +4,12 @@ import MainLayout from "../layouts/MainLayout";
 import PrivateRoute from "../layouts/PrivateRoute";
 import PublicRoute from "../layouts/PublicRoute";
 import LoginPage from "../pages/AuthPage/LoginPage";
+import RegisterPage from "../pages/AuthPage/RegisterPage";
+import CustomerPage from "../pages/MainPage/CustomerPage";
 import DashboardPage from "../pages/MainPage/DashboardPage";
+import OrderPage from "../pages/MainPage/OrderPage";
+import ProductDetailPage from "../pages/MainPage/ProductDetailPage";
+import ProductPage from "../pages/MainPage/ProductPage";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +24,7 @@ const router = createBrowserRouter([
           },
           {
             path: APP_ROUTE.AUTH.REGISTER,
-            element: <div>Register</div>,
+            element: <RegisterPage />,
           },
         ],
       },
@@ -41,16 +46,25 @@ const router = createBrowserRouter([
             element: <DashboardPage />,
           },
           {
-            path: APP_ROUTE.MAIN.PRODUCT,
-            element: <div>Product</div>,
+            path: APP_ROUTE.MAIN.PRODUCT._,
+            children: [
+              {
+                path: APP_ROUTE.MAIN.PRODUCT._,
+                element: <ProductPage />,
+              },
+              {
+                path: APP_ROUTE.MAIN.PRODUCT.DETAIL,
+                element: <ProductDetailPage />,
+              },
+            ],
           },
           {
             path: APP_ROUTE.MAIN.CUSTOMER,
-            element: <div>Customer</div>,
+            element: <CustomerPage />,
           },
           {
             path: APP_ROUTE.MAIN.ORDER,
-            element: <div>Order</div>,
+            element: <OrderPage />,
           },
         ],
       },

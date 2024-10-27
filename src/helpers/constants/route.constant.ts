@@ -6,7 +6,10 @@ export enum ROUTE_NAME {
 export const APP_ROUTE = {
   MAIN: {
     DASHBOARD: `/${ROUTE_NAME.MAIN}/dashboard`,
-    PRODUCT: `/${ROUTE_NAME.MAIN}/product`,
+    PRODUCT: {
+      _: `/${ROUTE_NAME.MAIN}/product`,
+      DETAIL: `/${ROUTE_NAME.MAIN}/product/detail`,
+    },
     CUSTOMER: `/${ROUTE_NAME.MAIN}/customer`,
     ORDER: `/${ROUTE_NAME.MAIN}/order`,
   },

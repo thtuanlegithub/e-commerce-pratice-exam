@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 import { ROUTE_NAME } from "../../helpers/constants/route.constant";
+import { capitalize } from "../../helpers/utils/format";
 import { SideBarGroupTemplate } from "../types/SideBarGroupTemplate.type";
 
 type SideBarGroupProps = {
@@ -21,7 +22,7 @@ function SidebarGroup({ group, isFocused }: SideBarGroupProps) {
       case "order":
         return { to: `${ROUTE_NAME.MAIN}/order` };
       default:
-        return { to: `${ROUTE_NAME.MAIN}` };
+        return { to: `${ROUTE_NAME.MAIN}/dashboard` };
     }
   }, [group.title]);
 
@@ -38,7 +39,7 @@ function SidebarGroup({ group, isFocused }: SideBarGroupProps) {
       >
         <div className="flex items-center gap-4">
           {group.icon}
-          <span>{group.title}</span>
+          <span>{capitalize(group.title)}</span>
         </div>
         {isFocused && (
           <div>
