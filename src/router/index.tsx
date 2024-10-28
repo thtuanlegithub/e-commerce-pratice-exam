@@ -10,6 +10,8 @@ import DashboardPage from "../pages/MainPage/DashboardPage";
 import OrderPage from "../pages/MainPage/OrderPage";
 import ProductDetailPage from "../pages/MainPage/ProductDetailPage";
 import ProductPage from "../pages/MainPage/ProductPage";
+import UserHomePage from "../pages/UserPage/UserHomePage";
+import UserProductDetailPage from "../pages/UserPage/UserProductDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +67,19 @@ const router = createBrowserRouter([
           {
             path: APP_ROUTE.ADMIN.ORDER,
             element: <OrderPage />,
+          },
+        ],
+      },
+      {
+        path: ROUTE_NAME.USER,
+        children: [
+          {
+            path: APP_ROUTE.USER.HOME,
+            element: <UserHomePage />,
+          },
+          {
+            path: APP_ROUTE.USER.PRODUCT,
+            element: <UserProductDetailPage />,
           },
         ],
       },
