@@ -10,7 +10,7 @@ function PublicRoute() {
   );
 
   return isAuthenticated ? (
-    <Navigate to={APP_ROUTE.MAIN.DASHBOARD} />
+    <Navigate to={APP_ROUTE.ADMIN.DASHBOARD} />
   ) : (
     <Outlet />
   );

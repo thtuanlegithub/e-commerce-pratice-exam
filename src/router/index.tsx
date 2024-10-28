@@ -39,31 +39,31 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Navigate to={APP_ROUTE.MAIN.DASHBOARD} replace />,
+            element: <Navigate to={APP_ROUTE.ADMIN.DASHBOARD} replace />,
           },
           {
-            path: APP_ROUTE.MAIN.DASHBOARD,
+            path: APP_ROUTE.ADMIN.DASHBOARD,
             element: <DashboardPage />,
           },
           {
-            path: APP_ROUTE.MAIN.PRODUCT._,
+            path: APP_ROUTE.ADMIN.PRODUCT._,
             children: [
               {
-                path: APP_ROUTE.MAIN.PRODUCT._,
+                path: APP_ROUTE.ADMIN.PRODUCT._,
                 element: <ProductPage />,
               },
               {
-                path: APP_ROUTE.MAIN.PRODUCT.DETAIL,
+                path: APP_ROUTE.ADMIN.PRODUCT.DETAIL,
                 element: <ProductDetailPage />,
               },
             ],
           },
           {
-            path: APP_ROUTE.MAIN.CUSTOMER,
+            path: APP_ROUTE.ADMIN.CUSTOMER,
             element: <CustomerPage />,
           },
           {
-            path: APP_ROUTE.MAIN.ORDER,
+            path: APP_ROUTE.ADMIN.ORDER,
             element: <OrderPage />,
           },
         ],

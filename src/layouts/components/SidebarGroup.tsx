@@ -14,15 +14,15 @@ function SidebarGroup({ group, isFocused }: SideBarGroupProps) {
   const handleNavigation = useMemo(() => {
     switch (group.title) {
       case "dashboard":
-        return { to: `${ROUTE_NAME.MAIN}/dashboard` };
+        return { to: `${ROUTE_NAME.ADMIN}/dashboard` };
       case "product":
-        return { to: `${ROUTE_NAME.MAIN}/product` };
+        return { to: `${ROUTE_NAME.ADMIN}/product` };
       case "customer":
-        return { to: `${ROUTE_NAME.MAIN}/customer` };
+        return { to: `${ROUTE_NAME.ADMIN}/customer` };
       case "order":
-        return { to: `${ROUTE_NAME.MAIN}/order` };
+        return { to: `${ROUTE_NAME.ADMIN}/order` };
       default:
-        return { to: `${ROUTE_NAME.MAIN}/dashboard` };
+        return { to: `${ROUTE_NAME.ADMIN}/dashboard` };
     }
   }, [group.title]);
 

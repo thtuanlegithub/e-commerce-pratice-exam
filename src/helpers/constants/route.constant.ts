@@ -1,20 +1,26 @@
 export enum ROUTE_NAME {
   AUTH = "auth",
+  ADMIN = "admin",
   MAIN = "main",
+  USER = "user",
 }
 
 export const APP_ROUTE = {
-  MAIN: {
-    DASHBOARD: `/${ROUTE_NAME.MAIN}/dashboard`,
+  ADMIN: {
+    DASHBOARD: `/${ROUTE_NAME.ADMIN}/dashboard`,
     PRODUCT: {
-      _: `/${ROUTE_NAME.MAIN}/product`,
-      DETAIL: `/${ROUTE_NAME.MAIN}/product/detail`,
+      _: `/${ROUTE_NAME.ADMIN}/product`,
+      DETAIL: `/${ROUTE_NAME.ADMIN}/product/detail`,
     },
-    CUSTOMER: `/${ROUTE_NAME.MAIN}/customer`,
-    ORDER: `/${ROUTE_NAME.MAIN}/order`,
+    CUSTOMER: `/${ROUTE_NAME.ADMIN}/customer`,
+    ORDER: `/${ROUTE_NAME.ADMIN}/order`,
   },
   AUTH: {
     LOGIN: `/${ROUTE_NAME.AUTH}/login`,
     REGISTER: `/${ROUTE_NAME.AUTH}/register`,
+  },
+  USER: {
+    HOME: `/${ROUTE_NAME.USER}/home`,
+    PRODUCT: `/${ROUTE_NAME.USER}/product`,
   },
 };

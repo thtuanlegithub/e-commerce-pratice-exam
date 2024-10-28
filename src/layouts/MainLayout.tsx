@@ -17,7 +17,7 @@ function MainLayout() {
     const path = location.pathname;
     const pathArray = path
       .split("/")
-      .filter((item) => item !== "" && item !== "main");
+      .filter((item) => item !== "" && item !== "admin");
     if (pathArray.length === 0) {
       setFocusedTitles([undefined, undefined]);
       return;
