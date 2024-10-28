@@ -1,9 +1,9 @@
 type MainPageTitleProps = {
-  title: string;
+	title: string;
 };
 
 function MainPageTitle({ title }: MainPageTitleProps) {
-  return <div className="text-lg font-medium">{title}</div>;
+	return <div className='text-lg font-medium'>{title}</div>;
 }
 
 export default MainPageTitle;
