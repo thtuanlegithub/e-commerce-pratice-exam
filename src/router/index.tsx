@@ -41,7 +41,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Navigate to={APP_ROUTE.ADMIN.DASHBOARD} replace />,
+            element: <Navigate to={APP_ROUTE.ADMIN.PRODUCT._} replace />,
           },
           {
             path: APP_ROUTE.ADMIN.DASHBOARD,
