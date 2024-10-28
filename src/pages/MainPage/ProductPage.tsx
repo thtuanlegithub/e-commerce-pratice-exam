@@ -142,7 +142,7 @@ function ProductPage() {
           size="large"
           type="primary"
           onClick={() => {
-            navigate(APP_ROUTE.MAIN.PRODUCT.DETAIL);
+            navigate(APP_ROUTE.ADMIN.PRODUCT.DETAIL);
           }}
         >
           <span className="text-sm">Add Product</span>
