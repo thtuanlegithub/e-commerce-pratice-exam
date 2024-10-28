@@ -1,5 +1,5 @@
 export type SideBarGroupTitleCode =
-  | "dashboard"
-  | "customer"
-  | "product"
-  | "order";
+	| "dashboard"
+	| "customer"
+	| "product"
+	| "order";
