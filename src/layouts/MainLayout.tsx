@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { LAYOUT_SIDEBAR_ADMIN } from "../helpers/constants/layout.constant";
+import { APP_ROUTE } from "../helpers/constants/route.constant";
+import { USER_TYPE } from "../helpers/types/dto/user.type";
+import { RootState } from "../services/store";
 import NavBar from "./NavBar";
 import Sidebar from "./Sidebar";
 
@@ -12,6 +16,8 @@ function MainLayout() {
   const location = useLocation();
 
   const sidebarGroupTemplate = useMemo(() => LAYOUT_SIDEBAR_ADMIN, []);
+
+  const { user } = useSelector((state: RootState) => state.auth);
 
   useEffect(() => {
     const path = location.pathname;
@@ -30,15 +36,24 @@ function MainLayout() {
   }, [location.pathname, sidebarGroupTemplate]);
 
   return (
-    <div className="flex flex-col flex-1">
-      <NavBar />
-      <div className="flex flex-row flex-1">
-        <Sidebar focusedTitles={focusedTitles} groups={LAYOUT_SIDEBAR_ADMIN} />
-        <div className="flex-1 shadow-md pl-4 pt-4">
-          <Outlet />
+    <>
+      {user?.userType === USER_TYPE.ADMIN ? (
+        <div className="flex flex-col flex-1">
+          <NavBar />
+          <div className="flex flex-row flex-1">
+            <Sidebar
+              focusedTitles={focusedTitles}
+              groups={LAYOUT_SIDEBAR_ADMIN}
+            />
+            <div className="flex-1 shadow-md pl-4 pt-4">
+              <Outlet />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ) : (
+        <Navigate to={APP_ROUTE.AUTH.LOGIN} />
+      )}
+    </>
   );
 }
 
