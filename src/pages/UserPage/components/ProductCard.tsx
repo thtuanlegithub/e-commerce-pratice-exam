@@ -24,7 +24,7 @@ function ProductCard({ product }: ProductCardProps) {
       className="flex flex-col w-96 rounded-xl shadow-md hover:shadow-xl cursor-pointer"
     >
       <Image
-        className="object-contain h-24 w-24 rounded-t-xl"
+        className="object-contain h-16 w-24 rounded-t-xl"
         src={product.image}
       />
       <div className="mt-4 flex flex-col gap-4 px-4 pb-8">
